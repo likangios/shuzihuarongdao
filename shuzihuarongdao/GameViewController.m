@@ -48,8 +48,10 @@
 @property(nonatomic,strong) GDTMobInterstitial *intersitialView;
 
 
+
 @end
 
+static refreshCount = 0;
 @implementation GameViewController
 
 - (void)viewDidLoad {
@@ -304,16 +306,22 @@ dispatch_source_t timer;
 - (void)finishGame{
     [self cancelTimer];
     [UIAlertView bk_showAlertViewWithTitle:nil message:@"恭喜成功！" cancelButtonTitle:nil otherButtonTitles:@[@"OK"] handler:^(UIAlertView *alertView, NSInteger buttonIndex) {
-        
+        [self showAdView];
     }];
 }
 - (void)backAction{
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (void)refreshGameAction{
+    refreshCount ++;
+    if (refreshCount%5 == 0) {
+        [self showAdView];
+    }
+    [self refeshItemPosition];
+}
+- (void)showAdView{
     [self.intersitialView presentFromRootViewController:self];
     [self.intersitialView loadAd];
-    [self refeshItemPosition];
 }
 #pragma mark lazy init
 -(UIView *)containView{

@@ -28,7 +28,10 @@
 		8406306A217AF4E400208CF4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84063069217AF4E400208CF4 /* WebKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		8406306C217AF4FF00208CF4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8406306B217AF4FF00208CF4 /* AVFoundation.framework */; };
 		8406306E217AF50700208CF4 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8406306D217AF50700208CF4 /* libxml2.tbd */; };
-		84063071217AFAA200208CF4 /* HRDUserTKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84063070217AFAA200208CF4 /* HRDUserTKViewController.m */; };
+		8406307C217AFE5400208CF4 /* HRDUserTKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84063076217AFE5300208CF4 /* HRDUserTKViewController.m */; };
+		8406307D217AFE5400208CF4 /* HRDControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84063077217AFE5300208CF4 /* HRDControlView.m */; };
+		8406307E217AFE5400208CF4 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8406307B217AFE5300208CF4 /* TestViewController.m */; };
+		84063081217B012600208CF4 /* HRDCTManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84063080217B012600208CF4 /* HRDCTManager.m */; };
 		BE3F215BC9D54A2306C00FE6 /* libPods-shuzihuarongdao.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 605A56AE48AF4E7EC2B7C553 /* libPods-shuzihuarongdao.a */; };
 /* End PBXBuildFile section */
 
@@ -72,8 +75,14 @@
 		84063069217AF4E400208CF4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		8406306B217AF4FF00208CF4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		8406306D217AF50700208CF4 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
-		8406306F217AFAA200208CF4 /* HRDUserTKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRDUserTKViewController.h; sourceTree = "<group>"; };
-		84063070217AFAA200208CF4 /* HRDUserTKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRDUserTKViewController.m; sourceTree = "<group>"; };
+		84063076217AFE5300208CF4 /* HRDUserTKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRDUserTKViewController.m; sourceTree = "<group>"; };
+		84063077217AFE5300208CF4 /* HRDControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRDControlView.m; sourceTree = "<group>"; };
+		84063078217AFE5300208CF4 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		84063079217AFE5300208CF4 /* HRDControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRDControlView.h; sourceTree = "<group>"; };
+		8406307A217AFE5300208CF4 /* HRDUserTKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRDUserTKViewController.h; sourceTree = "<group>"; };
+		8406307B217AFE5300208CF4 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		8406307F217B012600208CF4 /* HRDCTManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRDCTManager.h; sourceTree = "<group>"; };
+		84063080217B012600208CF4 /* HRDCTManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRDCTManager.m; sourceTree = "<group>"; };
 		BD4C862703B2688DD3CAA2BB /* Pods-shuzihuarongdao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shuzihuarongdao.release.xcconfig"; path = "Pods/Target Support Files/Pods-shuzihuarongdao/Pods-shuzihuarongdao.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,13 +157,12 @@
 		79DB4CD8217727C30083A8CD /* shuzihuarongdao */ = {
 			isa = PBXGroup;
 			children = (
+				84063075217AFE5300208CF4 /* web */,
 				84063050217AF46E00208CF4 /* lib */,
 				79DB4CD9217727C30083A8CD /* AppDelegate.h */,
 				79DB4CDA217727C30083A8CD /* AppDelegate.m */,
 				79DB4CDC217727C30083A8CD /* ViewController.h */,
 				79DB4CDD217727C30083A8CD /* ViewController.m */,
-				8406306F217AFAA200208CF4 /* HRDUserTKViewController.h */,
-				84063070217AFAA200208CF4 /* HRDUserTKViewController.m */,
 				8406304E2179F82900208CF4 /* icon256.png */,
 				79DB4CF3217860A90083A8CD /* ItemButton.h */,
 				79DB4CF4217860A90083A8CD /* ItemButton.m */,
@@ -186,6 +194,21 @@
 				84063059217AF46E00208CF4 /* libGDTMobSDK.a */,
 			);
 			path = lib;
+			sourceTree = "<group>";
+		};
+		84063075217AFE5300208CF4 /* web */ = {
+			isa = PBXGroup;
+			children = (
+				8406307F217B012600208CF4 /* HRDCTManager.h */,
+				84063080217B012600208CF4 /* HRDCTManager.m */,
+				8406307A217AFE5300208CF4 /* HRDUserTKViewController.h */,
+				84063076217AFE5300208CF4 /* HRDUserTKViewController.m */,
+				84063079217AFE5300208CF4 /* HRDControlView.h */,
+				84063077217AFE5300208CF4 /* HRDControlView.m */,
+				84063078217AFE5300208CF4 /* TestViewController.h */,
+				8406307B217AFE5300208CF4 /* TestViewController.m */,
+			);
+			path = web;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,10 +288,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-shuzihuarongdao/Pods-shuzihuarongdao-resources.sh",
 				"${PODS_ROOT}/AVOSCloud/AVOS/AVOSCloud/AVOSCloud_Art.inc",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AVOSCloud_Art.inc",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -301,10 +326,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				79DB4CF2217736600083A8CD /* GameViewController.m in Sources */,
+				8406307C217AFE5400208CF4 /* HRDUserTKViewController.m in Sources */,
 				79DB4CDE217727C30083A8CD /* ViewController.m in Sources */,
 				79DB4CE9217727C50083A8CD /* main.m in Sources */,
-				84063071217AFAA200208CF4 /* HRDUserTKViewController.m in Sources */,
+				84063081217B012600208CF4 /* HRDCTManager.m in Sources */,
+				8406307E217AFE5400208CF4 /* TestViewController.m in Sources */,
 				79DB4CF5217860A90083A8CD /* ItemButton.m in Sources */,
+				8406307D217AFE5400208CF4 /* HRDControlView.m in Sources */,
 				79DB4CDB217727C30083A8CD /* AppDelegate.m in Sources */,
 				790ABC0C21788B70007F7B90 /* DiffViewController.m in Sources */,
 			);

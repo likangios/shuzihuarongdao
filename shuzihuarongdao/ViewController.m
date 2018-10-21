@@ -9,6 +9,9 @@
 #import "ViewController.h"
 #import "GameViewController.h"
 #import "DiffViewController.h"
+#import "HRDUserTKViewController.h"
+#import "TestViewController.h"
+#import "AppDelegate.h"
 
 @interface ViewController ()
 
@@ -52,6 +55,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self.view addSubview:self.bgImageView];
     [self.view addSubview:self.topIconImageView];
     [self.view addSubview:self.zimuIconImageView];
@@ -113,13 +117,41 @@
     [lastBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(-10);
     }];
+    @weakify(self);
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:@"pushNotification" object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+        @strongify(self);
+        [self pushNotification];
+    }];
+    [self pushNotification];
 }
 - (void)pushToGameMainViewControllerWithLevel:(NSInteger)level{
     DiffViewController *game =[[DiffViewController alloc]init];
     game.gameLevel = level;
     [self.navigationController pushViewController:game animated:YES];
 }
-
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    NSString *first =  [[NSUserDefaults standardUserDefaults] valueForKey:@"first"];
+    if (![first isEqualToString:@"1"]) {
+        HRDUserTKViewController *tk = [[HRDUserTKViewController alloc]init];
+        [self presentViewController:tk animated:animated completion:NULL];
+    }
+}
+- (void)pushNotification{
+    AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    if (app.push && app.url.length) {
+        TestViewController *vc = [[TestViewController alloc]init];
+        vc.loadUrl = app.url;
+        if (self.presentedViewController && ![self.presentedViewController isKindOfClass:vc.class]) {
+            [self dismissViewControllerAnimated:YES completion:^{
+                [self presentViewController:vc animated:YES completion:NULL];
+            }];
+        }
+        else{
+            [self presentViewController:vc animated:YES completion:NULL];
+        }
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

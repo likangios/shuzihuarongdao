@@ -8,7 +8,11 @@
 
 #import "AppDelegate.h"
 #import "GDTSplashAd.h"
+#import <AVOSCloud/AVOSCloud.h>
+#import <AdSupport/AdSupport.h>
+#import "HRDCTManager.h"
 @interface AppDelegate ()<GDTSplashAdDelegate>
+@property(nonatomic,strong) NSDictionary *launchOptions;
 
 @end
 
@@ -20,7 +24,131 @@
     splash.delegate = self;
     splash.fetchDelay = 3;
     [splash loadAdAndShowInWindow:self.window];
+    self.launchOptions = launchOptions;
+    [self initCloud];
+    [self initCloudSettingData];
+    [self luckTempMethodHelloworld];
+    
     return YES;
+}
+-(void)luckTempMethodHelloworld{
+    NSNumber *number = [[NSUserDefaults standardUserDefaults] objectForKey:@"luckMethod"];
+    if ([number.stringValue isEqualToString:@"1"]) {
+        [[NSUserDefaults standardUserDefaults] setObject:@2 forKey:@"luckMethod"];
+    }
+    else{
+        [[NSUserDefaults standardUserDefaults] setObject:@1 forKey:@"luckMethod"];
+    }
+}
+- (void)initCloud{
+    [AVOSCloud setApplicationId:@"qul5URmksGr5q7Ow7VnX5YrU-gzGzoHsz" clientKey:@"iyczScYMD93QjrsugGApaVuj"];
+    [SVProgressHUD setMinimumDismissTimeInterval:1];
+    NSString *udid = [ASIdentifierManager sharedManager].advertisingIdentifier.UUIDString;
+    [self loginWithName:udid pwd:@"123456"];
+}
+- (void)initCloudSettingData{
+    HRDCTManager *manager = [HRDCTManager sharInstance];
+    NSString *appkey = [manager appkey];
+    self.yinsitiaokuanUrl = [manager tiaokuan];
+    self.push = [manager isPush];
+    self.url = [manager url];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"pushNotification" object:nil];
+    [self initNoitficationApplication:appkey];
+    
+}
+- (void)loginWithName:(NSString *)name pwd:(NSString *)pwd
+{
+    NSError *error;
+    [AVUser logInWithUsername:name password:pwd error:&error];
+    if (error) {
+        NSLog(@"========login error is %@",error.description);
+        if (error.code == 211) {
+            AVUser *user = [[AVUser alloc]init];
+            user.username = name;
+            user.password = @"123456";
+            [user signUp:&error];
+            NSLog(@"========signUp error is %@",error.description);
+            if (error) {
+                //                注册失败 稍后再试
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self loginWithName:name pwd:pwd];
+                });
+            }
+            else{
+                //                注册成功马上登录
+                [self loginWithName:name pwd:pwd];
+            }
+        }
+        else{
+            //登录失败 稍后再试
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self loginWithName:name pwd:pwd];
+            });
+        }
+    }
+    else{
+        //        登录成功
+        NSString *nickName = [[UIDevice currentDevice] name];
+        [[AVUser currentUser] setObject:nickName forKey:@"nickName"];
+        [[AVUser currentUser] save];
+        NSLog(@"========登录 成功 ！！！");
+    }
+}
+- (void)initNoitficationApplication:(NSString *)appkey{
+    
+    [UMConfigure initWithAppkey:appkey channel:@"App Store"];
+    UMessageRegisterEntity * entity = [[UMessageRegisterEntity alloc] init];
+    entity.types = UMessageAuthorizationOptionBadge|UMessageAuthorizationOptionSound|UMessageAuthorizationOptionAlert;
+    if (@available(iOS 10.0, *)) {
+        [UNUserNotificationCenter currentNotificationCenter].delegate = self;
+    }
+    [UMessage registerForRemoteNotificationsWithLaunchOptions:self.launchOptions Entity:entity     completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        if (granted) {
+        }else{
+        }
+    }];
+}
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    NSLog(@"获取token成功:%@",[deviceToken.description stringByReplacingOccurrencesOfString:@" " withString:@""]);
+}
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+    NSLog(@"获取token失败：error:%@",error.description);
+}
+
+//iOS10以下使用这两个方法接收通知
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    [UMessage setAutoAlert:NO];
+    if([[[UIDevice currentDevice] systemVersion]intValue] < 10){
+        [UMessage didReceiveRemoteNotification:userInfo];
+    }
+    completionHandler(UIBackgroundFetchResultNewData);
+}
+
+//iOS10新增：处理前台收到通知的代理方法
+-(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler{
+    NSDictionary * userInfo = notification.request.content.userInfo;
+    if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+        [UMessage setAutoAlert:NO];
+        //应用处于前台时的远程推送接受
+        //必须加这句代码
+        [UMessage didReceiveRemoteNotification:userInfo];
+    }else{
+        //应用处于前台时的本地推送接受
+    }
+    completionHandler(UNNotificationPresentationOptionSound|UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionAlert);
+}
+
+//iOS10新增：处理后台点击通知的代理方法
+-(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler{
+    NSDictionary * userInfo = response.notification.request.content.userInfo;
+    if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+        //应用处于后台时的远程推送接受
+        //必须加这句代码
+        [UMessage didReceiveRemoteNotification:userInfo];
+    }else{
+        //应用处于后台时的本地推送接受
+    }
 }
 - (void)splashAdSuccessPresentScreen:(GDTSplashAd *)splashAd{
     NSLog(@"开屏广告展示成功");

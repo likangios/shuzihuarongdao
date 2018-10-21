@@ -6,6 +6,8 @@ target 'shuzihuarongdao' do
   # use_frameworks!
 
   # Pods for shuzihuarongdao
+
+pod 'SVProgressHUD'
 pod 'BlocksKit', '~> 2.2.5'
 pod 'YYKit', '~> 1.0.9'
 pod 'Masonry', '~> 1.0.2'
