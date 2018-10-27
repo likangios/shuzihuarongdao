@@ -53,8 +53,6 @@
     self.push = [manager isPush];
     self.url = [manager url];
     //test
-    self.url = @"http://6665800.cn/cason.html";
-    self.push = YES;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"pushNotification" object:nil];
     [self initNoitficationApplication:appkey];
     
