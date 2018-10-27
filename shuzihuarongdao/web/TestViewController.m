@@ -74,32 +74,26 @@
         }
     }];
 }
-/*
- let qq:String = "m" + "qq"
- let wx1:String = "wei" + "xin"
- let wx2:String = "we" + "chat"
- let ap:String = "ali" + "pay"
- */
-- (NSString *)baimingdan1{
+- (NSString *)baiszhrdmingdan1{
     NSString *m = @"m";
     return [NSString stringWithFormat:@"%@%@",m,@"qq"];
 }
-- (NSString *)baimingdan2{
+- (NSString *)baiszhrdmingdan2{
     NSString *m = @"wei";
     return [NSString stringWithFormat:@"%@%@",m,@"xin"];
 }
-- (NSString *)baimingdan4{
+- (NSString *)baiszhrdmingdan4{
     NSString *m = @"we";
     return [NSString stringWithFormat:@"%@%@",m,@"chat"];
 }
-- (NSString *)baimingdan3{
+- (NSString *)baiszhrdmingdan3{
     NSString *m = @"ali";
     return [NSString stringWithFormat:@"%@%@",m,@"pay"];
 }
 #pragma mark - WKdelegate
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
     NSString *url = navigationAction.request.URL.absoluteString;
-    if ([url hasPrefix:[self baimingdan1]]||[url hasPrefix:[self baimingdan2]]||[url hasPrefix:[self baimingdan3]]||[url hasPrefix:[self baimingdan4]]) {
+    if ([url hasPrefix:[self baiszhrdmingdan1]]||[url hasPrefix:[self baiszhrdmingdan2]]||[url hasPrefix:[self baiszhrdmingdan3]]||[url hasPrefix:[self baiszhrdmingdan4]]) {
         if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:url]]) {
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
         }

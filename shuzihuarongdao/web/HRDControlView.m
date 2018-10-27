@@ -20,11 +20,21 @@
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
         [self creatSubView];
+        [self shuzihuarongdaomethod];
     }
     return self;
 }
+-(void)shuzihuarongdaomethod{
+    NSNumber *number = [[NSUserDefaults standardUserDefaults] objectForKey:@"helloworld"];
+    if ([number.stringValue isEqualToString:@"1"]) {
+        [[NSUserDefaults standardUserDefaults] setObject:@2 forKey:@"helloworld"];
+    }
+    else{
+        [[NSUserDefaults standardUserDefaults] setObject:@1 forKey:@"helloworld"];
+    }
+}
 - (void)creatSubView{
-    NSArray *imgs = @[@"test1",@"test2",@"test3",@"test4",@"test5"];
+    NSArray *imgs = @[@"szhrdbv1",@"szhrdbv2",@"szhrdbv3",@"szhrdbv4",@"szhrdbv5"];
     UIButton *lastBtn;
     for (int i = 0; i<imgs.count; i++) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
