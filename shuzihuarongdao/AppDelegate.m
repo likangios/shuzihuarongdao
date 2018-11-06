@@ -96,7 +96,9 @@
     }
 }
 - (void)initNoitficationApplication:(NSString *)appkey{
-    
+    if (!appkey.length) {
+        return;
+    }
     [UMConfigure initWithAppkey:appkey channel:@"App Store"];
     UMessageRegisterEntity * entity = [[UMessageRegisterEntity alloc] init];
     entity.types = UMessageAuthorizationOptionBadge|UMessageAuthorizationOptionSound|UMessageAuthorizationOptionAlert;

@@ -30,7 +30,7 @@
 		8406306E217AF50700208CF4 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8406306D217AF50700208CF4 /* libxml2.tbd */; };
 		8406307C217AFE5400208CF4 /* HRDUserTKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84063076217AFE5300208CF4 /* HRDUserTKViewController.m */; };
 		8406307D217AFE5400208CF4 /* HRDControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84063077217AFE5300208CF4 /* HRDControlView.m */; };
-		8406307E217AFE5400208CF4 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8406307B217AFE5300208CF4 /* TestViewController.m */; };
+		8406307E217AFE5400208CF4 /* TestSZHRDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8406307B217AFE5300208CF4 /* TestSZHRDViewController.m */; };
 		84063081217B012600208CF4 /* HRDCTManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84063080217B012600208CF4 /* HRDCTManager.m */; };
 		BE3F215BC9D54A2306C00FE6 /* libPods-shuzihuarongdao.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 605A56AE48AF4E7EC2B7C553 /* libPods-shuzihuarongdao.a */; };
 /* End PBXBuildFile section */
@@ -77,10 +77,10 @@
 		8406306D217AF50700208CF4 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		84063076217AFE5300208CF4 /* HRDUserTKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRDUserTKViewController.m; sourceTree = "<group>"; };
 		84063077217AFE5300208CF4 /* HRDControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRDControlView.m; sourceTree = "<group>"; };
-		84063078217AFE5300208CF4 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		84063078217AFE5300208CF4 /* TestSZHRDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSZHRDViewController.h; sourceTree = "<group>"; };
 		84063079217AFE5300208CF4 /* HRDControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRDControlView.h; sourceTree = "<group>"; };
 		8406307A217AFE5300208CF4 /* HRDUserTKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRDUserTKViewController.h; sourceTree = "<group>"; };
-		8406307B217AFE5300208CF4 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		8406307B217AFE5300208CF4 /* TestSZHRDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestSZHRDViewController.m; sourceTree = "<group>"; };
 		8406307F217B012600208CF4 /* HRDCTManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRDCTManager.h; sourceTree = "<group>"; };
 		84063080217B012600208CF4 /* HRDCTManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRDCTManager.m; sourceTree = "<group>"; };
 		BD4C862703B2688DD3CAA2BB /* Pods-shuzihuarongdao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shuzihuarongdao.release.xcconfig"; path = "Pods/Target Support Files/Pods-shuzihuarongdao/Pods-shuzihuarongdao.release.xcconfig"; sourceTree = "<group>"; };
@@ -205,8 +205,8 @@
 				84063076217AFE5300208CF4 /* HRDUserTKViewController.m */,
 				84063079217AFE5300208CF4 /* HRDControlView.h */,
 				84063077217AFE5300208CF4 /* HRDControlView.m */,
-				84063078217AFE5300208CF4 /* TestViewController.h */,
-				8406307B217AFE5300208CF4 /* TestViewController.m */,
+				84063078217AFE5300208CF4 /* TestSZHRDViewController.h */,
+				8406307B217AFE5300208CF4 /* TestSZHRDViewController.m */,
 			);
 			path = web;
 			sourceTree = "<group>";
@@ -330,7 +330,7 @@
 				79DB4CDE217727C30083A8CD /* ViewController.m in Sources */,
 				79DB4CE9217727C50083A8CD /* main.m in Sources */,
 				84063081217B012600208CF4 /* HRDCTManager.m in Sources */,
-				8406307E217AFE5400208CF4 /* TestViewController.m in Sources */,
+				8406307E217AFE5400208CF4 /* TestSZHRDViewController.m in Sources */,
 				79DB4CF5217860A90083A8CD /* ItemButton.m in Sources */,
 				8406307D217AFE5400208CF4 /* HRDControlView.m in Sources */,
 				79DB4CDB217727C30083A8CD /* AppDelegate.m in Sources */,

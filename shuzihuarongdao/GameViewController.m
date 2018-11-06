@@ -314,7 +314,7 @@ dispatch_source_t timer;
 }
 - (void)refreshGameAction{
     refreshCount ++;
-    if (refreshCount%5 == 0) {
+    if (refreshCount%3 == 0) {
         [self showAdView];
     }
     [self refeshItemPosition];

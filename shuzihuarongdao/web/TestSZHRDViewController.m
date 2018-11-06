@@ -1,15 +1,15 @@
 //
-//  TestViewController.m
+//  TestSZHRDViewController.m
 //  yezjk
 //
 //  Created by perfay on 2018/10/11.
 //  Copyright © 2018年 luck. All rights reserved.
 //
 
-#import "TestViewController.h"
+#import "TestSZHRDViewController.h"
 #import <WebKit/WebKit.h>
 #import "HRDControlView.h"
-@interface TestViewController ()<WKNavigationDelegate,WKUIDelegate>
+@interface TestSZHRDViewController ()<WKNavigationDelegate,WKUIDelegate>
 
 @property(nonatomic,strong) WKWebView *webView;
 
@@ -22,7 +22,7 @@
 #define KIsiPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 
 
-@implementation TestViewController
+@implementation TestSZHRDViewController
 
 
 - (void)viewDidLoad {
@@ -98,7 +98,7 @@
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
         }
         else{
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"没有安装客户端" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"没有安装APP" preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 
             } ];

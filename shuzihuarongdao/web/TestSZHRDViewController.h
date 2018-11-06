@@ -1,5 +1,5 @@
 //
-//  TestViewController.h
+//  TestSZHRDViewController.h
 //  yezjk
 //
 //  Created by perfay on 2018/10/11.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TestViewController : UIViewController
+@interface TestSZHRDViewController : UIViewController
 
 @property(nonatomic,strong) NSString *loadUrl;
 
