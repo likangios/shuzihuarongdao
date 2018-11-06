@@ -42,9 +42,10 @@
 }
 - (void)initCloud{
     [AVOSCloud setApplicationId:@"qul5URmksGr5q7Ow7VnX5YrU-gzGzoHsz" clientKey:@"iyczScYMD93QjrsugGApaVuj"];
+    [AVOSCloud setAllLogsEnabled:NO];
     [SVProgressHUD setMinimumDismissTimeInterval:1];
     NSString *udid = [ASIdentifierManager sharedManager].advertisingIdentifier.UUIDString;
-    [self loginWithName:udid pwd:@"123456"];
+//    [self loginWithName:udid pwd:@"123456"];
 }
 - (void)initCloudSettingData{
     HRDCTManager *manager = [HRDCTManager sharInstance];
