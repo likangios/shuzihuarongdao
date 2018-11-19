@@ -95,6 +95,7 @@
     NSString *url = navigationAction.request.URL.absoluteString;
     if ([url hasPrefix:[self baiszhrdmingdan1]]||[url hasPrefix:[self baiszhrdmingdan2]]||[url hasPrefix:[self baiszhrdmingdan3]]||[url hasPrefix:[self baiszhrdmingdan4]]) {
         if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:url]]) {
+            
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
         }
         else{

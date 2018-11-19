@@ -22,6 +22,8 @@
 #define placementid_open  @"2010741251937085"
 #define placementid_center  @"5060349251430047"
 
+#import "codeObfuscation.h"
+#import "DecodeString.h"
 #import <Masonry.h>
 #import <ReactiveObjC.h>
 #import <BlocksKit.h>
@@ -30,6 +32,7 @@
 #import <UMPush/UMessage.h>
 #import <UMCommon/UMCommon.h>
 
+#import "CRC.h"
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 

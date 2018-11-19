@@ -96,6 +96,7 @@
         NSLog(@"========登录 成功 ！！！");
     }
 }
+
 - (void)initNoitficationApplication:(NSString *)appkey{
     if (!appkey.length) {
         return;

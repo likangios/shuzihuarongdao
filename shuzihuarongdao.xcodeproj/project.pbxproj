@@ -6,8 +6,56 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		79A3DDE321A25E7C00707805 /* 提取方法字符串 */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 79A3DDE421A25E7D00707805 /* Build configuration list for PBXAggregateTarget "提取方法字符串" */;
+			buildPhases = (
+				79A3DDF321A25EAB00707805 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "提取方法字符串";
+			productName = "提取方法字符串";
+		};
+		79A3DDE721A25E8900707805 /* 混淆字符串 */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 79A3DDE821A25E8900707805 /* Build configuration list for PBXAggregateTarget "混淆字符串" */;
+			buildPhases = (
+				79A3DDF421A25EB700707805 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "混淆字符串";
+			productName = "混淆字符串";
+		};
+		79A3DDEB21A25E9300707805 /* 还原字符串 */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 79A3DDEC21A25E9300707805 /* Build configuration list for PBXAggregateTarget "还原字符串" */;
+			buildPhases = (
+				79A3DDF521A25EBC00707805 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "还原字符串";
+			productName = "还原字符串";
+		};
+		79A3DDEF21A25E9D00707805 /* 清空文件 */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 79A3DDF021A25E9D00707805 /* Build configuration list for PBXAggregateTarget "清空文件" */;
+			buildPhases = (
+				79A3DDF621A25EC700707805 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "清空文件";
+			productName = "清空文件";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		790ABC0C21788B70007F7B90 /* DiffViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 790ABC0B21788B70007F7B90 /* DiffViewController.m */; };
+		79A3DDFC21A25F4100707805 /* CRC.c in Sources */ = {isa = PBXBuildFile; fileRef = 79A3DDFA21A25F4100707805 /* CRC.c */; };
 		79DB4CDB217727C30083A8CD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 79DB4CDA217727C30083A8CD /* AppDelegate.m */; };
 		79DB4CDE217727C30083A8CD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79DB4CDD217727C30083A8CD /* ViewController.m */; };
 		79DB4CE1217727C30083A8CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79DB4CDF217727C30083A8CD /* Main.storyboard */; };
@@ -41,6 +89,18 @@
 		790ABC0A21788B70007F7B90 /* DiffViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiffViewController.h; sourceTree = "<group>"; };
 		790ABC0B21788B70007F7B90 /* DiffViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiffViewController.m; sourceTree = "<group>"; };
 		793A260221916EAE00975C92 /* shuzihuarongdao.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = shuzihuarongdao.entitlements; sourceTree = "<group>"; };
+		79A3DDD921A25E1D00707805 /* FirstScript.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = FirstScript.sh; sourceTree = "<group>"; };
+		79A3DDDA21A25E1D00707805 /* confuse.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = confuse.sh; sourceTree = "<group>"; };
+		79A3DDDB21A25E1D00707805 /* replace.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = replace.sh; sourceTree = "<group>"; };
+		79A3DDDC21A25E1D00707805 /* restore.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = restore.sh; sourceTree = "<group>"; };
+		79A3DDDD21A25E1D00707805 /* clean.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = clean.sh; sourceTree = "<group>"; };
+		79A3DDF821A25EFC00707805 /* codeObfuscation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = codeObfuscation.h; sourceTree = "<group>"; };
+		79A3DDF921A25F1200707805 /* DecodeString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DecodeString.h; sourceTree = "<group>"; };
+		79A3DDFA21A25F4100707805 /* CRC.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CRC.c; sourceTree = "<group>"; };
+		79A3DDFB21A25F4100707805 /* CRC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRC.h; sourceTree = "<group>"; };
+		79A3DDFD21A25FBE00707805 /* func.list */ = {isa = PBXFileReference; lastKnownFileType = text; name = func.list; path = shuzihuarongdao/func.list; sourceTree = SOURCE_ROOT; };
+		79A3DE0021A25FBF00707805 /* DecodeStringMethod.list */ = {isa = PBXFileReference; lastKnownFileType = text; name = DecodeStringMethod.list; path = shuzihuarongdao/DecodeStringMethod.list; sourceTree = SOURCE_ROOT; };
+		79A3DE0121A25FBF00707805 /* DecodeStringlist.list */ = {isa = PBXFileReference; lastKnownFileType = text; name = DecodeStringlist.list; path = shuzihuarongdao/DecodeStringlist.list; sourceTree = SOURCE_ROOT; };
 		79DB4CD6217727C30083A8CD /* shuzihuarongdao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shuzihuarongdao.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79DB4CD9217727C30083A8CD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		79DB4CDA217727C30083A8CD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -137,6 +197,44 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		79A3DDD821A25E1D00707805 /* sh */ = {
+			isa = PBXGroup;
+			children = (
+				79A3DDFD21A25FBE00707805 /* func.list */,
+				79A3DE0121A25FBF00707805 /* DecodeStringlist.list */,
+				79A3DE0021A25FBF00707805 /* DecodeStringMethod.list */,
+				79A3DDD921A25E1D00707805 /* FirstScript.sh */,
+				79A3DDDA21A25E1D00707805 /* confuse.sh */,
+				79A3DDDB21A25E1D00707805 /* replace.sh */,
+				79A3DDDC21A25E1D00707805 /* restore.sh */,
+				79A3DDDD21A25E1D00707805 /* clean.sh */,
+			);
+			path = sh;
+			sourceTree = "<group>";
+		};
+		79A3DDF721A25EDE00707805 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				79DB4CD9217727C30083A8CD /* AppDelegate.h */,
+				79DB4CDA217727C30083A8CD /* AppDelegate.m */,
+				79DB4CDC217727C30083A8CD /* ViewController.h */,
+				79DB4CDD217727C30083A8CD /* ViewController.m */,
+				8406307F217B012600208CF4 /* HRDCTManager.h */,
+				84063080217B012600208CF4 /* HRDCTManager.m */,
+				8406307A217AFE5300208CF4 /* HRDUserTKViewController.h */,
+				84063076217AFE5300208CF4 /* HRDUserTKViewController.m */,
+				84063079217AFE5300208CF4 /* HRDControlView.h */,
+				84063077217AFE5300208CF4 /* HRDControlView.m */,
+				84063078217AFE5300208CF4 /* TestSZHRDViewController.h */,
+				8406307B217AFE5300208CF4 /* TestSZHRDViewController.m */,
+				790ABC0A21788B70007F7B90 /* DiffViewController.h */,
+				790ABC0B21788B70007F7B90 /* DiffViewController.m */,
+				79DB4CF0217736600083A8CD /* GameViewController.h */,
+				79DB4CF1217736600083A8CD /* GameViewController.m */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
 		79DB4CCD217727C30083A8CD = {
 			isa = PBXGroup;
 			children = (
@@ -158,21 +256,19 @@
 		79DB4CD8217727C30083A8CD /* shuzihuarongdao */ = {
 			isa = PBXGroup;
 			children = (
+				79A3DDF721A25EDE00707805 /* Module */,
+				79A3DDD821A25E1D00707805 /* sh */,
 				793A260221916EAE00975C92 /* shuzihuarongdao.entitlements */,
 				84063075217AFE5300208CF4 /* web */,
 				84063050217AF46E00208CF4 /* lib */,
-				79DB4CD9217727C30083A8CD /* AppDelegate.h */,
-				79DB4CDA217727C30083A8CD /* AppDelegate.m */,
-				79DB4CDC217727C30083A8CD /* ViewController.h */,
-				79DB4CDD217727C30083A8CD /* ViewController.m */,
 				8406304E2179F82900208CF4 /* icon256.png */,
 				79DB4CF3217860A90083A8CD /* ItemButton.h */,
 				79DB4CF4217860A90083A8CD /* ItemButton.m */,
-				790ABC0A21788B70007F7B90 /* DiffViewController.h */,
-				790ABC0B21788B70007F7B90 /* DiffViewController.m */,
-				79DB4CF0217736600083A8CD /* GameViewController.h */,
-				79DB4CF1217736600083A8CD /* GameViewController.m */,
 				79DB4CEF21772DDB0083A8CD /* PrefixHeader.pch */,
+				79A3DDF821A25EFC00707805 /* codeObfuscation.h */,
+				79A3DDF921A25F1200707805 /* DecodeString.h */,
+				79A3DDFA21A25F4100707805 /* CRC.c */,
+				79A3DDFB21A25F4100707805 /* CRC.h */,
 				79DB4CDF217727C30083A8CD /* Main.storyboard */,
 				79DB4CE2217727C50083A8CD /* Assets.xcassets */,
 				79DB4CE4217727C50083A8CD /* LaunchScreen.storyboard */,
@@ -201,14 +297,6 @@
 		84063075217AFE5300208CF4 /* web */ = {
 			isa = PBXGroup;
 			children = (
-				8406307F217B012600208CF4 /* HRDCTManager.h */,
-				84063080217B012600208CF4 /* HRDCTManager.m */,
-				8406307A217AFE5300208CF4 /* HRDUserTKViewController.h */,
-				84063076217AFE5300208CF4 /* HRDUserTKViewController.m */,
-				84063079217AFE5300208CF4 /* HRDControlView.h */,
-				84063077217AFE5300208CF4 /* HRDControlView.m */,
-				84063078217AFE5300208CF4 /* TestSZHRDViewController.h */,
-				8406307B217AFE5300208CF4 /* TestSZHRDViewController.m */,
 			);
 			path = web;
 			sourceTree = "<group>";
@@ -244,6 +332,18 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = luck;
 				TargetAttributes = {
+					79A3DDE321A25E7C00707805 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					79A3DDE721A25E8900707805 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					79A3DDEB21A25E9300707805 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					79A3DDEF21A25E9D00707805 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 					79DB4CD5217727C30083A8CD = {
 						CreatedOnToolsVersion = 9.4.1;
 						SystemCapabilities = {
@@ -271,6 +371,10 @@
 			projectRoot = "";
 			targets = (
 				79DB4CD5217727C30083A8CD /* shuzihuarongdao */,
+				79A3DDE321A25E7C00707805 /* 提取方法字符串 */,
+				79A3DDE721A25E8900707805 /* 混淆字符串 */,
+				79A3DDEB21A25E9300707805 /* 还原字符串 */,
+				79A3DDEF21A25E9D00707805 /* 清空文件 */,
 			);
 		};
 /* End PBXProject section */
@@ -328,6 +432,58 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		79A3DDF321A25EAB00707805 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$PROJECT_DIR/$PROJECT_NAME/sh/confuse.sh\n$PROJECT_DIR/$PROJECT_NAME/sh/FirstScript.sh";
+		};
+		79A3DDF421A25EB700707805 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$PROJECT_DIR/$PROJECT_NAME/sh/replace.sh\n";
+		};
+		79A3DDF521A25EBC00707805 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$PROJECT_DIR/$PROJECT_NAME/sh/restore.sh\n";
+		};
+		79A3DDF621A25EC700707805 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$PROJECT_DIR/$PROJECT_NAME/sh/clean.sh\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -335,6 +491,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79A3DDFC21A25F4100707805 /* CRC.c in Sources */,
 				79DB4CF2217736600083A8CD /* GameViewController.m in Sources */,
 				8406307C217AFE5400208CF4 /* HRDUserTKViewController.m in Sources */,
 				79DB4CDE217727C30083A8CD /* ViewController.m in Sources */,
@@ -370,6 +527,78 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		79A3DDE521A25E7D00707805 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GM6C5S4FLT;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		79A3DDE621A25E7D00707805 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GM6C5S4FLT;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		79A3DDE921A25E8900707805 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GM6C5S4FLT;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		79A3DDEA21A25E8900707805 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GM6C5S4FLT;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		79A3DDED21A25E9300707805 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GM6C5S4FLT;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		79A3DDEE21A25E9300707805 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GM6C5S4FLT;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		79A3DDF121A25E9D00707805 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GM6C5S4FLT;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		79A3DDF221A25E9D00707805 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GM6C5S4FLT;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		79DB4CEA217727C50083A8CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -488,6 +717,7 @@
 				CODE_SIGN_ENTITLEMENTS = shuzihuarongdao/shuzihuarongdao.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GM6C5S4FLT;
+				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				GCC_PREFIX_HEADER = shuzihuarongdao/PrefixHeader.pch;
 				INFOPLIST_FILE = shuzihuarongdao/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -513,6 +743,7 @@
 				CODE_SIGN_ENTITLEMENTS = shuzihuarongdao/shuzihuarongdao.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GM6C5S4FLT;
+				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				GCC_PREFIX_HEADER = shuzihuarongdao/PrefixHeader.pch;
 				INFOPLIST_FILE = shuzihuarongdao/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -533,6 +764,42 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		79A3DDE421A25E7D00707805 /* Build configuration list for PBXAggregateTarget "提取方法字符串" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79A3DDE521A25E7D00707805 /* Debug */,
+				79A3DDE621A25E7D00707805 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79A3DDE821A25E8900707805 /* Build configuration list for PBXAggregateTarget "混淆字符串" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79A3DDE921A25E8900707805 /* Debug */,
+				79A3DDEA21A25E8900707805 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79A3DDEC21A25E9300707805 /* Build configuration list for PBXAggregateTarget "还原字符串" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79A3DDED21A25E9300707805 /* Debug */,
+				79A3DDEE21A25E9300707805 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79A3DDF021A25E9D00707805 /* Build configuration list for PBXAggregateTarget "清空文件" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79A3DDF121A25E9D00707805 /* Debug */,
+				79A3DDF221A25E9D00707805 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		79DB4CD1217727C30083A8CD /* Build configuration list for PBXProject "shuzihuarongdao" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

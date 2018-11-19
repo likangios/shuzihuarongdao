@@ -157,7 +157,7 @@ static refreshCount = 0;
     [RACObserve(self, seconds) subscribeNext:^(NSNumber *x) {
         @strongify(self);
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.timeLabel.text = [NSString stringWithFormat:@"时间:%ld″",x.integerValue];
+            self.timeLabel.text = [NSString stringWithFormat:@"时间:%lds",x.integerValue];
         });
     }];
 }
@@ -388,7 +388,7 @@ dispatch_source_t timer;
         _timeLabel.font = [UIFont systemFontOfSize:13];
         _timeLabel.textColor = [UIColor whiteColor];
         _timeLabel.textAlignment = NSTextAlignmentCenter;
-        _timeLabel.text = @"0″";
+        _timeLabel.text = @"0s";
         
     }
     return _timeLabel;
@@ -451,16 +451,16 @@ dispatch_source_t timer;
 }
 #pragma mark - ad delegate
 - (void)bannerViewDidReceived{
-    NSLog(@"banner---请求广告成功");
+    NSLog(@"banner:success");
 }
 - (void)bannerViewFailToReceived:(NSError *)error{
-    NSLog(@"banner---请求广告失败：%@",error.description);
+    NSLog(@"banner:fail:%@",error.description);
 }
 - (void)interstitialSuccessToLoadAd:(GDTMobInterstitial *)interstitial{
-    NSLog(@"插屏---请求广告成功");
+    NSLog(@"interstitial:success");
 }
 - (void)interstitialFailToLoadAd:(GDTMobInterstitial *)interstitial error:(NSError *)error{
-    NSLog(@"插屏---请求广告失败：%@",error.description);
+    NSLog(@"interstitial:fail:%@",error.description);
 
 }
 - (void)didReceiveMemoryWarning {
