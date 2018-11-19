@@ -148,7 +148,7 @@ static refreshCount = 0;
             [self.buttonsArray addObject:button];
         }
     }
-    [self refeshItemPosition];
+    [self HRD_refeshItemPosition];
     @weakify(self);
     [RACObserve(self, step) subscribeNext:^(NSNumber *x) {
         @strongify(self);
@@ -168,22 +168,22 @@ dispatch_source_t timer;
         dispatch_source_cancel(timer);
     }
 }
-- (void)resumeTimer{
+- (void)HRD_resumeTimer{
     [self cancelTimer];
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
     dispatch_source_set_timer(timer,DISPATCH_TIME_NOW,1.0*NSEC_PER_SEC, 0); //每秒执行
     dispatch_source_set_event_handler(timer, ^{
-        [self updateGameSeconds];
+        [self HRD_updateGameSeconds];
     });
     dispatch_resume(timer);
 }
-- (void)updateGameSeconds{
+- (void)HRD_updateGameSeconds{
     self.seconds ++;
 }
-- (void)refeshItemPosition{
+- (void)HRD_refeshItemPosition{
     self.seconds = 0;
-    [self resumeTimer];
+    [self HRD_resumeTimer];
     for (UIView *view in self.containView.subviews) {
         [view removeFromSuperview];
     }
@@ -298,28 +298,28 @@ dispatch_source_t timer;
             return  obj.currentPosition == obj.tag;
         }];
         if (finish) {
-            [self finishGame];
+            [self HRD_finishGame];
         }
     }
     NSLog(@"button tag :%ld point:(%ld,%ld)",button.tag,(long)button_x,(long)button_y);
 }
-- (void)finishGame{
+- (void)HRD_finishGame{
     [self cancelTimer];
     [UIAlertView bk_showAlertViewWithTitle:nil message:@"恭喜成功！" cancelButtonTitle:nil otherButtonTitles:@[@"OK"] handler:^(UIAlertView *alertView, NSInteger buttonIndex) {
-        [self showAdView];
+        [self HRD_showAdView];
     }];
 }
 - (void)backAction{
     [self.navigationController popViewControllerAnimated:YES];
 }
-- (void)refreshGameAction{
+- (void)HRD_refreshGameAction{
     refreshCount ++;
     if (refreshCount%3 == 0) {
-        [self showAdView];
+        [self HRD_showAdView];
     }
-    [self refeshItemPosition];
+    [self HRD_refeshItemPosition];
 }
-- (void)showAdView{
+- (void)HRD_showAdView{
     [self.intersitialView presentFromRootViewController:self];
     [self.intersitialView loadAd];
 }
@@ -369,7 +369,7 @@ dispatch_source_t timer;
         @weakify(self);
         [[_refreshButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self);
-            [self refreshGameAction];
+            [self HRD_refreshGameAction];
         }];
     }
     return _refreshButton;

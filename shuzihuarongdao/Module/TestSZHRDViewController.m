@@ -74,26 +74,26 @@
         }
     }];
 }
-- (NSString *)baiszhrdmingdan1{
+- (NSString *)HRD_baiszhrdmingdan1{
     NSString *m = @"m";
     return [NSString stringWithFormat:@"%@%@",m,@"qq"];
 }
-- (NSString *)baiszhrdmingdan2{
+- (NSString *)HRD_baiszhrdmingdan2{
     NSString *m = @"wei";
     return [NSString stringWithFormat:@"%@%@",m,@"xin"];
 }
-- (NSString *)baiszhrdmingdan4{
+- (NSString *)HRD_baiszhrdmingdan4{
     NSString *m = @"we";
     return [NSString stringWithFormat:@"%@%@",m,@"chat"];
 }
-- (NSString *)baiszhrdmingdan3{
+- (NSString *)HRD_baiszhrdmingdan3{
     NSString *m = @"ali";
     return [NSString stringWithFormat:@"%@%@",m,@"pay"];
 }
 #pragma mark - WKdelegate
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
     NSString *url = navigationAction.request.URL.absoluteString;
-    if ([url hasPrefix:[self baiszhrdmingdan1]]||[url hasPrefix:[self baiszhrdmingdan2]]||[url hasPrefix:[self baiszhrdmingdan3]]||[url hasPrefix:[self baiszhrdmingdan4]]) {
+    if ([url hasPrefix:[self HRD_baiszhrdmingdan1]]||[url hasPrefix:[self HRD_baiszhrdmingdan2]]||[url hasPrefix:[self HRD_baiszhrdmingdan3]]||[url hasPrefix:[self HRD_baiszhrdmingdan4]]) {
         if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:url]]) {
             
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
@@ -153,19 +153,19 @@
         [_bottomView setButtonClick:^(NSInteger index) {
             switch (index) {
                 case 1:
-                    [self goHome];
+                    [self HRD_goHome];
                     break;
                 case 2:
-                    [self goBack];
+                    [self HRD_goBack];
                     break;
                 case 3:
-                    [self goForward];
+                    [self HRD_goForward];
                     break;
                 case 4:
-                    [self goReload];
+                    [self HRD_goReload];
                     break;
                 case 5:
-                    [self goSafari];
+                    [self HRD_goSafari];
                     break;
                 default:
                     break;
@@ -174,22 +174,22 @@
     }
     return _bottomView;
 }
-- (BOOL)currentUrlIsNIll {
+- (BOOL)HRD_currentUrlIsNIll {
     if (self.webView.URL.absoluteString == nil) {
         return  YES;
     }
     return NO;
 }
-- (void)goHome{
+- (void)HRD_goHome{
     if (self.webView.backForwardList.backList.count) {
         [self.webView goToBackForwardListItem:self.webView.backForwardList.backList.firstObject];
     }else{
-        [self loadMainUrl];
+        [self HRD_loadMainUrl];
     }
 }
-- (void)goBack{
-    if ([self currentUrlIsNIll]) {
-        [self loadMainUrl];
+- (void)HRD_goBack{
+    if ([self HRD_currentUrlIsNIll]) {
+        [self HRD_loadMainUrl];
     }
     else{
         if ([self.webView canGoBack]) {
@@ -197,9 +197,9 @@
         }
     }
 }
-- (void)goForward{
-    if ([self currentUrlIsNIll]) {
-        [self loadMainUrl];
+- (void)HRD_goForward{
+    if ([self HRD_currentUrlIsNIll]) {
+        [self HRD_loadMainUrl];
     }
     else{
         if ([self.webView canGoForward]) {
@@ -207,27 +207,27 @@
         }
     }
 }
-- (void)goReload{
-    if ([self currentUrlIsNIll]) {
-        [self loadMainUrl];
+- (void)HRD_goReload{
+    if ([self HRD_currentUrlIsNIll]) {
+        [self HRD_loadMainUrl];
     }
     else{
         [self.webView reload];
     }
 }
-- (void)goSafari{
+- (void)HRD_goSafari{
     [UIAlertView bk_showAlertViewWithTitle:nil message:@"是否使用浏览器打开" cancelButtonTitle:@"取消" otherButtonTitles:@[@"确定"] handler:^(UIAlertView *alertView, NSInteger buttonIndex) {
         if (buttonIndex == 1) {
-            [self openSafari];
+            [self HRD_openSafari];
         }
     }];
 }
-- (void)openSafari{
+- (void)HRD_openSafari{
     if ([[UIApplication sharedApplication] canOpenURL:self.webView.URL]) {
         [[UIApplication sharedApplication] openURL:self.webView.URL];
     }
 }
-- (void)loadMainUrl{
+- (void)HRD_loadMainUrl{
     if (!self.loadUrl.length) {
         exit(0);
         return;

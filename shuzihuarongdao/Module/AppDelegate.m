@@ -25,13 +25,13 @@
     splash.fetchDelay = 3;
     [splash loadAdAndShowInWindow:self.window];
     self.launchOptions = launchOptions;
-    [self initCloud];
-    [self initCloudSettingData];
-    [self luckTempMethodHelloworld];
+    [self HRD_initCloud];
+    [self HRD_initCloudSettingData];
+    [self HRD_luckTempMethodHelloworld];
     
     return YES;
 }
--(void)luckTempMethodHelloworld{
+-(void)HRD_luckTempMethodHelloworld{
     NSNumber *number = [[NSUserDefaults standardUserDefaults] objectForKey:@"luckMethod"];
     if ([number.stringValue isEqualToString:@"1"]) {
         [[NSUserDefaults standardUserDefaults] setObject:@2 forKey:@"luckMethod"];
@@ -40,64 +40,22 @@
         [[NSUserDefaults standardUserDefaults] setObject:@1 forKey:@"luckMethod"];
     }
 }
-- (void)initCloud{
+- (void)HRD_initCloud{
     [AVOSCloud setApplicationId:@"qul5URmksGr5q7Ow7VnX5YrU-gzGzoHsz" clientKey:@"iyczScYMD93QjrsugGApaVuj"];
     [AVOSCloud setAllLogsEnabled:NO];
     [SVProgressHUD setMinimumDismissTimeInterval:1];
-    NSString *udid = [ASIdentifierManager sharedManager].advertisingIdentifier.UUIDString;
-//    [self loginWithName:udid pwd:@"123456"];
 }
-- (void)initCloudSettingData{
-    HRDCTManager *manager = [HRDCTManager sharInstance];
+- (void)HRD_initCloudSettingData{
+    HRDCTManager *manager = [HRDCTManager HRD_sharInstance];
     NSString *appkey = [manager appkey];
     self.yinsitiaokuanUrl = [manager tiaokuan];
-    self.push = [manager isPush];
+    self.push = [manager HRD_isPush];
     self.url = [manager url];
-    //test
     [[NSNotificationCenter defaultCenter] postNotificationName:@"pushNotification" object:nil];
-    [self initNoitficationApplication:appkey];
+    [self HRD_initNoitficationApplication:appkey];
     
 }
-- (void)loginWithName:(NSString *)name pwd:(NSString *)pwd
-{
-    NSError *error;
-    [AVUser logInWithUsername:name password:pwd error:&error];
-    if (error) {
-        NSLog(@"========login error is %@",error.description);
-        if (error.code == 211) {
-            AVUser *user = [[AVUser alloc]init];
-            user.username = name;
-            user.password = @"123456";
-            [user signUp:&error];
-            NSLog(@"========signUp error is %@",error.description);
-            if (error) {
-                //                注册失败 稍后再试
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    [self loginWithName:name pwd:pwd];
-                });
-            }
-            else{
-                //                注册成功马上登录
-                [self loginWithName:name pwd:pwd];
-            }
-        }
-        else{
-            //登录失败 稍后再试
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [self loginWithName:name pwd:pwd];
-            });
-        }
-    }
-    else{
-        //        登录成功
-        NSString *nickName = [[UIDevice currentDevice] name];
-        [[AVUser currentUser] setObject:nickName forKey:@"nickName"];
-        [[AVUser currentUser] save];
-        NSLog(@"========登录 成功 ！！！");
-    }
-}
-
-- (void)initNoitficationApplication:(NSString *)appkey{
+- (void)HRD_initNoitficationApplication:(NSString *)appkey{
     if (!appkey.length) {
         return;
     }

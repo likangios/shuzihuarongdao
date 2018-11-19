@@ -95,14 +95,14 @@
         @weakify(self);
         [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self);
-            [self pushToGameMainViewControllerWithType:x.tag];
+            [self HRD_pushToGameMainViewControllerWithType:x.tag];
         }];
     }
     [lastBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(-10);
     }];
 }
-- (void)pushToGameMainViewControllerWithType:(NSInteger)type{
+- (void)HRD_pushToGameMainViewControllerWithType:(NSInteger)type{
     GameViewController *game =[[GameViewController alloc]init];
     game.gameLevel = self.gameLevel;
     game.gameType = type;

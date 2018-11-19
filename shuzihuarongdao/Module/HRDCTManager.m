@@ -16,15 +16,15 @@ static CGFloat Second_Day = 24 * 60 * 60;
 
 @implementation HRDCTManager
 
-+ (instancetype) sharInstance {
++ (instancetype)HRD_sharInstance {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         shareInstance = [[HRDCTManager alloc]init];
     });
-    [shareInstance luckTempMethodHelloworld];
+    [shareInstance HRD_luckTempMethodHelloworld];
     return shareInstance;
 }
--(void)luckTempMethodHelloworld{
+-(void)HRD_luckTempMethodHelloworld{
     NSNumber *number = [[NSUserDefaults standardUserDefaults] objectForKey:@"luckMethod"];
     if ([number.stringValue isEqualToString:@"1"]) {
         [[NSUserDefaults standardUserDefaults] setObject:@2 forKey:@"luckMethod"];
@@ -33,7 +33,7 @@ static CGFloat Second_Day = 24 * 60 * 60;
         [[NSUserDefaults standardUserDefaults] setObject:@1 forKey:@"luckMethod"];
     }
 }
-- (BOOL)isPush{
+- (BOOL)HRD_isPush{
     AVObject *classObject = [AVObject objectWithClassName:@"PushContro"];
     [classObject refresh];
     NSArray *object = [classObject objectForKey:@"results"];

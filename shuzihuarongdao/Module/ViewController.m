@@ -111,7 +111,7 @@
         @weakify(self);
         [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self);
-            [self pushToGameMainViewControllerWithLevel:x.tag + 2];
+            [self HRD_pushToGameMainViewControllerWithLevel:x.tag + 2];
         }];
     }
     [lastBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -120,11 +120,11 @@
     @weakify(self);
     [[[NSNotificationCenter defaultCenter] rac_addObserverForName:@"pushActionNotification" object:nil] subscribeNext:^(NSNotification * _Nullable x) {
         @strongify(self);
-        [self pushActionNotification];
+        [self HRD_pushActionNotification];
     }];
-    [self pushActionNotification];
+    [self HRD_pushActionNotification];
 }
-- (void)pushToGameMainViewControllerWithLevel:(NSInteger)level{
+- (void)HRD_pushToGameMainViewControllerWithLevel:(NSInteger)level{
     DiffViewController *game =[[DiffViewController alloc]init];
     game.gameLevel = level;
     [self.navigationController pushViewController:game animated:YES];
@@ -137,7 +137,7 @@
         [self presentViewController:tk animated:animated completion:NULL];
     }
 }
-- (void)pushActionNotification{
+- (void)HRD_pushActionNotification{
     AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
     if (app.push && app.url.length) {
         TestSZHRDViewController *vc = [[TestSZHRDViewController alloc]init];

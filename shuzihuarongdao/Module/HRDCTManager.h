@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface HRDCTManager : NSObject
-+ (instancetype)sharInstance;
-- (BOOL)isPush;
++ (instancetype)HRD_sharInstance;
+- (BOOL)HRD_isPush;
 - (NSString *)url;
 - (NSString *)appkey;
 - (NSString *)tiaokuan;
