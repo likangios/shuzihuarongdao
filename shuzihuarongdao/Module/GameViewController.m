@@ -201,7 +201,6 @@ dispatch_source_t timer;
      4x4  40\80\120
      */
     NSInteger randomCount = self.gameLevel * 30 * self.gameType;
-    NSLog(@"randomCount:%ld",randomCount);
     while (randomCount) {
         NSInteger empty_button_index = [newButtons indexOfObject:self.emptyButton];
         int empty_button_x = (self.emptyButton.currentPosition >> 8 & 0xF);
@@ -243,7 +242,6 @@ dispatch_source_t timer;
                 index = empty_button_index;
                 break;
         }
-//        NSLog(@"emptyIndex:%ld  buttonIndex:%ld",empty_button_index,index);
         ItemButton *button = newButtons[index];
         NSInteger tempPosition = button.currentPosition;
         button.currentPosition = self.emptyButton.currentPosition;
