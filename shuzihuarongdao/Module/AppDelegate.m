@@ -8,9 +8,7 @@
 
 #import "AppDelegate.h"
 #import "GDTSplashAd.h"
-#import <AVOSCloud/AVOSCloud.h>
 #import <AdSupport/AdSupport.h>
-#import "HRDCTManager.h"
 @interface AppDelegate ()<GDTSplashAdDelegate>
 @property(nonatomic,strong) NSDictionary *launchOptions;
 
@@ -25,8 +23,7 @@
     splash.fetchDelay = 3;
     [splash loadAdAndShowInWindow:self.window];
     self.launchOptions = launchOptions;
-    [self HRD_initCloud];
-    [self HRD_initCloudSettingData];
+    [SVProgressHUD setMinimumDismissTimeInterval:1];
     [self HRD_luckTempMethodHelloworld];
     
     return YES;
@@ -38,79 +35,6 @@
     }
     else{
         [[NSUserDefaults standardUserDefaults] setObject:@1 forKey:@"luckMethod"];
-    }
-}
-- (void)HRD_initCloud{
-    [AVOSCloud setApplicationId:@"qul5URmksGr5q7Ow7VnX5YrU-gzGzoHsz" clientKey:@"iyczScYMD93QjrsugGApaVuj"];
-    [AVOSCloud setAllLogsEnabled:NO];
-    [SVProgressHUD setMinimumDismissTimeInterval:1];
-}
-- (void)HRD_initCloudSettingData{
-    HRDCTManager *manager = [HRDCTManager HRD_sharInstance];
-    NSString *appkey = [manager appkey];
-    self.yinsitiaokuanUrl = [manager tiaokuan];
-    self.push = [manager HRD_isPush];
-    self.url = [manager url];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"pushNotification" object:nil];
-    [self HRD_initNoitficationApplication:appkey];
-    
-}
-- (void)HRD_initNoitficationApplication:(NSString *)appkey{
-    if (!appkey.length) {
-        return;
-    }
-    [UMConfigure initWithAppkey:appkey channel:@"App Store"];
-    UMessageRegisterEntity * entity = [[UMessageRegisterEntity alloc] init];
-    entity.types = UMessageAuthorizationOptionBadge|UMessageAuthorizationOptionSound|UMessageAuthorizationOptionAlert;
-    if (@available(iOS 10.0, *)) {
-        [UNUserNotificationCenter currentNotificationCenter].delegate = self;
-    }
-    [UMessage registerForRemoteNotificationsWithLaunchOptions:self.launchOptions Entity:entity     completionHandler:^(BOOL granted, NSError * _Nullable error) {
-        if (granted) {
-        }else{
-        }
-    }];
-}
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
-    NSLog(@"获取token成功:%@",[deviceToken.description stringByReplacingOccurrencesOfString:@" " withString:@""]);
-}
-- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
-    NSLog(@"获取token失败：error:%@",error.description);
-}
-
-//iOS10以下使用这两个方法接收通知
--(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
-{
-    [UMessage setAutoAlert:NO];
-    if([[[UIDevice currentDevice] systemVersion]intValue] < 10){
-        [UMessage didReceiveRemoteNotification:userInfo];
-    }
-    completionHandler(UIBackgroundFetchResultNewData);
-}
-
-//iOS10新增：处理前台收到通知的代理方法
--(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler{
-    NSDictionary * userInfo = notification.request.content.userInfo;
-    if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
-        [UMessage setAutoAlert:NO];
-        //应用处于前台时的远程推送接受
-        //必须加这句代码
-        [UMessage didReceiveRemoteNotification:userInfo];
-    }else{
-        //应用处于前台时的本地推送接受
-    }
-    completionHandler(UNNotificationPresentationOptionSound|UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionAlert);
-}
-
-//iOS10新增：处理后台点击通知的代理方法
--(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler{
-    NSDictionary * userInfo = response.notification.request.content.userInfo;
-    if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
-        //应用处于后台时的远程推送接受
-        //必须加这句代码
-        [UMessage didReceiveRemoteNotification:userInfo];
-    }else{
-        //应用处于后台时的本地推送接受
     }
 }
 - (void)splashAdSuccessPresentScreen:(GDTSplashAd *)splashAd{

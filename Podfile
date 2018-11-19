@@ -16,10 +16,4 @@ pod 'MBProgressHUD', '~> 1.1.0'
 pod 'AFNetworking'
 pod 'MJExtension', '~> 3.0.13'
 
-pod 'UMCCommon'
-pod 'UMCPush'
-pod 'UMCSecurityPlugins'
-pod 'AVOSCloud'  
-
-
 end

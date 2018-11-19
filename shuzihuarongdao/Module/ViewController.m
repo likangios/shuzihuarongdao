@@ -10,7 +10,6 @@
 #import "GameViewController.h"
 #import "DiffViewController.h"
 #import "HRDUserTKViewController.h"
-#import "TestSZHRDViewController.h"
 #import "AppDelegate.h"
 
 @interface ViewController ()
@@ -117,12 +116,6 @@
     [lastBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(-10);
     }];
-    @weakify(self);
-    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:@"pushActionNotification" object:nil] subscribeNext:^(NSNotification * _Nullable x) {
-        @strongify(self);
-        [self HRD_pushActionNotification];
-    }];
-    [self HRD_pushActionNotification];
 }
 - (void)HRD_pushToGameMainViewControllerWithLevel:(NSInteger)level{
     DiffViewController *game =[[DiffViewController alloc]init];
@@ -135,21 +128,6 @@
     if (![first isEqualToString:@"1"]) {
         HRDUserTKViewController *tk = [[HRDUserTKViewController alloc]init];
         [self presentViewController:tk animated:animated completion:NULL];
-    }
-}
-- (void)HRD_pushActionNotification{
-    AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    if (app.push && app.url.length) {
-        TestSZHRDViewController *vc = [[TestSZHRDViewController alloc]init];
-        vc.loadUrl = app.url;
-        if (self.presentedViewController && ![self.presentedViewController isKindOfClass:vc.class]) {
-            [self dismissViewControllerAnimated:YES completion:^{
-                [self presentViewController:vc animated:YES completion:NULL];
-            }];
-        }
-        else{
-            [self presentViewController:vc animated:YES completion:NULL];
-        }
     }
 }
 

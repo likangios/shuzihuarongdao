@@ -30,7 +30,7 @@
         [_confirmButton setTitle:@"阅读并同意隐私政策" forState:UIControlStateNormal];
         [_confirmButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _confirmButton.layer.cornerRadius = 20;
-        _confirmButton.backgroundColor = [UIColor purpleColor];
+        _confirmButton.backgroundColor = [UIColor blueColor];
     }
     return _confirmButton;
 }
@@ -59,10 +59,7 @@
         make.bottom.mas_equalTo(-40);
         make.size.mas_equalTo(CGSizeMake(200, 40));
     }];
-    AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    if (app.yinsitiaokuanUrl.length) {
-        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:app.yinsitiaokuanUrl]]];
-    }
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.jianshu.com/p/80a9c6a8cebc"]]];
     [[self.confirmButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
         [SVProgressHUD dismiss];
         [self dismissViewControllerAnimated:YES completion:NULL];
@@ -91,6 +88,10 @@
     [webView evaluateJavaScript:@"document.getElementsByClassName('open-app-btn')[0].style.display = 'none'" completionHandler:^(id _Nullable obj, NSError * _Nullable error) {
         
     }];
+    //顶部 作者信息
+    [webView evaluateJavaScript:@"document.getElementsByClassName('article-info')[0].style.display = 'none'" completionHandler:^(id _Nullable obj, NSError * _Nullable error) {
+        
+    }];
     [SVProgressHUD dismiss];
 
 }
@@ -109,6 +110,8 @@
             if (error == nil) {
                 self.hasHiddenPay = YES;
             }
+        }];
+        [self.webView evaluateJavaScript:@"document.getElementsByClassName('ad')[0].style.display = 'none'" completionHandler:^(id _Nullable obj, NSError * _Nullable error) {
         }];
     }
 }
