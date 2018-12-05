@@ -19,5 +19,4 @@ typedef enum : NSUInteger {
 
 @property(nonatomic,assign) GameType gameType;
 
-
 @end
