@@ -1,1 +1,34 @@
 
+#ifndef Demo_codeObfuscation_h
+#define Demo_codeObfuscation_h
+//confuse string at Thu Dec  6 11:41:39 CST 2018
+#define HRD_baiszhrdmingdan1 ZdLHLHxCHkxUbZbF
+#define HRD_baiszhrdmingdan2 oooxROYdcUBAVfMg
+#define HRD_baiszhrdmingdan3 rgoAWExZSCWJQXFI
+#define HRD_baiszhrdmingdan4 MkjUXwnjXtzDLxLs
+#define HRD_creatSubView MttCzokvRXDMDiQD
+#define HRD_currentUrlIsNIll UyJpAYWcnxQwdZos
+#define HRD_finishGame AbJkYRtjALODjFIX
+#define HRD_goBack QFSxkSduAUNKXIcu
+#define HRD_goForward wMOlRgpEzFkTphWG
+#define HRD_goHome cpajpkJBSxEylyZa
+#define HRD_goReload JxRBMOgPqAwdrkst
+#define HRD_goSafari YipNltQMAtIJCrUZ
+#define HRD_initCloud yLOUhLAmeOESPnwW
+#define HRD_initCloudSettingData RqOccttdtRxzsxvZ
+#define HRD_initNoitficationApplication EFdBGwurzsbQNQjq
+#define HRD_isPush xXkmYPIWbywhKdBn
+#define HRD_loadMainUrl aCQlbjsAvHRmHKMJ
+#define HRD_luckTempMethodHelloworld eebtYRJCTLMshiSF
+#define HRD_openSafari xeFdLHWbvqFLjAap
+#define HRD_pushActionNotification BsCQJOnQaouhHonP
+#define HRD_pushToGameMainViewControllerWithLevel IdOglaXuadUvgLkd
+#define HRD_pushToGameMainViewControllerWithType MXtrMVQtOYXZndmx
+#define HRD_refeshItemPosition usdMzHKDSQrxjKQu
+#define HRD_refreshGameAction pgSYREzHKozgWMdK
+#define HRD_resumeTimer hNYTKwSNRRRhiLga
+#define HRD_sharInstance ZDsxVAuXBVICrKmY
+#define HRD_showAdView KylGkjXphrSDFTMP
+#define HRD_shuzihuarongdaomethod fvVxIVuzDTVQWRjT
+#define HRD_updateGameSeconds YOaALShAiSEmmDWG
+#endif

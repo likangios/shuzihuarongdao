@@ -7,6 +7,28 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
+		791F779121B8D3A400242FF1 /* 添加标记 */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 791F779221B8D3A500242FF1 /* Build configuration list for PBXAggregateTarget "添加标记" */;
+			buildPhases = (
+				791F779521B8D3A900242FF1 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "添加标记";
+			productName = "添加标记";
+		};
+		798D7A0E21B904A800379B40 /* 移除随机方法 */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 798D7A0F21B904A800379B40 /* Build configuration list for PBXAggregateTarget "移除随机方法" */;
+			buildPhases = (
+				798D7A1221B904AC00379B40 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "移除随机方法";
+			productName = "移除随机方法";
+		};
 		79A3DDE321A25E7C00707805 /* 提取方法字符串 */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 79A3DDE421A25E7D00707805 /* Build configuration list for PBXAggregateTarget "提取方法字符串" */;
@@ -51,15 +73,15 @@
 			name = "清空文件";
 			productName = "清空文件";
 		};
-		79CFA65F21B4C95600831694 /* 随机方法 */ = {
+		79CFA65F21B4C95600831694 /* 添加随机方法 */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 79CFA66221B4C95600831694 /* Build configuration list for PBXAggregateTarget "随机方法" */;
+			buildConfigurationList = 79CFA66221B4C95600831694 /* Build configuration list for PBXAggregateTarget "添加随机方法" */;
 			buildPhases = (
 				79CFA66721B6335000831694 /* ShellScript */,
 			);
 			dependencies = (
 			);
-			name = "随机方法";
+			name = "添加随机方法";
 			productName = "随机方法";
 		};
 		79CFA66921B65AD700831694 /* 提取类名 */ = {
@@ -77,8 +99,8 @@
 
 /* Begin PBXBuildFile section */
 		790ABC0C21788B70007F7B90 /* DiffViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 790ABC0B21788B70007F7B90 /* DiffViewController.m */; };
+		791F779921B8FA7D00242FF1 /* TestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 791F779821B8FA7D00242FF1 /* TestClass.m */; };
 		79A3DDFC21A25F4100707805 /* CRC.c in Sources */ = {isa = PBXBuildFile; fileRef = 79A3DDFA21A25F4100707805 /* CRC.c */; };
-		79D8D9FD21B7718100276D27 /* TestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 79D8D9FC21B7718100276D27 /* TestClass.m */; };
 		79DB4CDB217727C30083A8CD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 79DB4CDA217727C30083A8CD /* AppDelegate.m */; };
 		79DB4CDE217727C30083A8CD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79DB4CDD217727C30083A8CD /* ViewController.m */; };
 		79DB4CE1217727C30083A8CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79DB4CDF217727C30083A8CD /* Main.storyboard */; };
@@ -111,7 +133,12 @@
 		605A56AE48AF4E7EC2B7C553 /* libPods-shuzihuarongdao.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-shuzihuarongdao.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		790ABC0A21788B70007F7B90 /* DiffViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiffViewController.h; sourceTree = "<group>"; };
 		790ABC0B21788B70007F7B90 /* DiffViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiffViewController.m; sourceTree = "<group>"; };
+		791F779021B8B70C00242FF1 /* End.list */ = {isa = PBXFileReference; lastKnownFileType = text; name = End.list; path = shuzihuarongdao/End.list; sourceTree = SOURCE_ROOT; };
+		791F779621B8D3BA00242FF1 /* addTag.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = addTag.sh; sourceTree = "<group>"; };
+		791F779721B8FA7D00242FF1 /* TestClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestClass.h; sourceTree = "<group>"; };
+		791F779821B8FA7D00242FF1 /* TestClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestClass.m; sourceTree = "<group>"; };
 		793A260221916EAE00975C92 /* shuzihuarongdao.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = shuzihuarongdao.entitlements; sourceTree = "<group>"; };
+		798D7A1321B904BD00379B40 /* removeRandomMethod.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = removeRandomMethod.sh; sourceTree = "<group>"; };
 		79A3DDD921A25E1D00707805 /* FirstScript.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = FirstScript.sh; sourceTree = "<group>"; };
 		79A3DDDA21A25E1D00707805 /* confuse.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = confuse.sh; sourceTree = "<group>"; };
 		79A3DDDB21A25E1D00707805 /* replace.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = replace.sh; sourceTree = "<group>"; };
@@ -125,12 +152,9 @@
 		79A3DE0021A25FBF00707805 /* DecodeStringMethod.list */ = {isa = PBXFileReference; lastKnownFileType = text; name = DecodeStringMethod.list; path = shuzihuarongdao/DecodeStringMethod.list; sourceTree = SOURCE_ROOT; };
 		79A3DE0121A25FBF00707805 /* DecodeStringlist.list */ = {isa = PBXFileReference; lastKnownFileType = text; name = DecodeStringlist.list; path = shuzihuarongdao/DecodeStringlist.list; sourceTree = SOURCE_ROOT; };
 		79CFA66321B4C97500831694 /* randomMethod.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = randomMethod.sh; sourceTree = "<group>"; };
-		79CFA66821B6557400831694 /* fileName.list */ = {isa = PBXFileReference; lastKnownFileType = text; name = fileName.list; path = shuzihuarongdao/fileName.list; sourceTree = SOURCE_ROOT; };
 		79CFA66E21B65AF100831694 /* getClassName.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = getClassName.sh; sourceTree = "<group>"; };
 		79CFA66F21B675CD00831694 /* method_m.list */ = {isa = PBXFileReference; lastKnownFileType = text; name = method_m.list; path = shuzihuarongdao/method_m.list; sourceTree = SOURCE_ROOT; };
 		79CFA67021B675CD00831694 /* method_h.list */ = {isa = PBXFileReference; lastKnownFileType = text; name = method_h.list; path = shuzihuarongdao/method_h.list; sourceTree = SOURCE_ROOT; };
-		79D8D9FB21B7718100276D27 /* TestClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestClass.h; sourceTree = "<group>"; };
-		79D8D9FC21B7718100276D27 /* TestClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestClass.m; sourceTree = "<group>"; };
 		79DB4CD6217727C30083A8CD /* shuzihuarongdao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shuzihuarongdao.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79DB4CD9217727C30083A8CD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		79DB4CDA217727C30083A8CD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -232,7 +256,7 @@
 			children = (
 				79CFA67021B675CD00831694 /* method_h.list */,
 				79CFA66F21B675CD00831694 /* method_m.list */,
-				79CFA66821B6557400831694 /* fileName.list */,
+				791F779021B8B70C00242FF1 /* End.list */,
 				79A3DDFD21A25FBE00707805 /* func.list */,
 				79A3DE0121A25FBF00707805 /* DecodeStringlist.list */,
 				79A3DE0021A25FBF00707805 /* DecodeStringMethod.list */,
@@ -243,6 +267,8 @@
 				79A3DDDD21A25E1D00707805 /* clean.sh */,
 				79CFA66321B4C97500831694 /* randomMethod.sh */,
 				79CFA66E21B65AF100831694 /* getClassName.sh */,
+				791F779621B8D3BA00242FF1 /* addTag.sh */,
+				798D7A1321B904BD00379B40 /* removeRandomMethod.sh */,
 			);
 			path = sh;
 			sourceTree = "<group>";
@@ -266,8 +292,8 @@
 				790ABC0B21788B70007F7B90 /* DiffViewController.m */,
 				79DB4CF0217736600083A8CD /* GameViewController.h */,
 				79DB4CF1217736600083A8CD /* GameViewController.m */,
-				79D8D9FB21B7718100276D27 /* TestClass.h */,
-				79D8D9FC21B7718100276D27 /* TestClass.m */,
+				791F779721B8FA7D00242FF1 /* TestClass.h */,
+				791F779821B8FA7D00242FF1 /* TestClass.m */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -369,6 +395,12 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = luck;
 				TargetAttributes = {
+					791F779121B8D3A400242FF1 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					798D7A0E21B904A800379B40 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 					79A3DDE321A25E7C00707805 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -418,8 +450,10 @@
 				79A3DDE721A25E8900707805 /* 混淆字符串 */,
 				79A3DDEB21A25E9300707805 /* 还原字符串 */,
 				79A3DDEF21A25E9D00707805 /* 清空文件 */,
-				79CFA65F21B4C95600831694 /* 随机方法 */,
+				79CFA65F21B4C95600831694 /* 添加随机方法 */,
 				79CFA66921B65AD700831694 /* 提取类名 */,
+				791F779121B8D3A400242FF1 /* 添加标记 */,
+				798D7A0E21B904A800379B40 /* 移除随机方法 */,
 			);
 		};
 /* End PBXProject section */
@@ -476,6 +510,32 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		791F779521B8D3A900242FF1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$PROJECT_DIR/$PROJECT_NAME/sh/addTag.sh\n\n";
+		};
+		798D7A1221B904AC00379B40 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = $PROJECT_DIR/$PROJECT_NAME/sh/removeRandomMethod.sh;
 		};
 		79A3DDF321A25EAB00707805 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -540,7 +600,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$PROJECT_DIR/$PROJECT_NAME/sh/randomMethod.sh\n\n";
+			shellScript = "$PROJECT_DIR/$PROJECT_NAME/sh/removeRandomMethod.sh\n$PROJECT_DIR/$PROJECT_NAME/sh/getClassName.sh\n$PROJECT_DIR/$PROJECT_NAME/sh/addTag.sh\n$PROJECT_DIR/$PROJECT_NAME/sh/randomMethod.sh\n\n";
 		};
 		79CFA66D21B65ADE00831694 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -553,7 +613,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$PROJECT_DIR/$PROJECT_NAME/sh/getClassName.sh\n";
+			shellScript = "$PROJECT_DIR/$PROJECT_NAME/sh/removeRandomMethod.sh\n$PROJECT_DIR/$PROJECT_NAME/sh/getClassName.sh\n$PROJECT_DIR/$PROJECT_NAME/sh/addTag.sh\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -562,7 +622,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79D8D9FD21B7718100276D27 /* TestClass.m in Sources */,
+				791F779921B8FA7D00242FF1 /* TestClass.m in Sources */,
 				79A3DDFC21A25F4100707805 /* CRC.c in Sources */,
 				79DB4CF2217736600083A8CD /* GameViewController.m in Sources */,
 				8406307C217AFE5400208CF4 /* HRDUserTKViewController.m in Sources */,
@@ -599,6 +659,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		791F779321B8D3A500242FF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GM6C5S4FLT;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		791F779421B8D3A500242FF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GM6C5S4FLT;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		798D7A1021B904A800379B40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GM6C5S4FLT;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		798D7A1121B904A800379B40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GM6C5S4FLT;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		79A3DDE521A25E7D00707805 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -872,6 +968,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		791F779221B8D3A500242FF1 /* Build configuration list for PBXAggregateTarget "添加标记" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				791F779321B8D3A500242FF1 /* Debug */,
+				791F779421B8D3A500242FF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		798D7A0F21B904A800379B40 /* Build configuration list for PBXAggregateTarget "移除随机方法" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				798D7A1021B904A800379B40 /* Debug */,
+				798D7A1121B904A800379B40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		79A3DDE421A25E7D00707805 /* Build configuration list for PBXAggregateTarget "提取方法字符串" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -908,7 +1022,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		79CFA66221B4C95600831694 /* Build configuration list for PBXAggregateTarget "随机方法" */ = {
+		79CFA66221B4C95600831694 /* Build configuration list for PBXAggregateTarget "添加随机方法" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				79CFA66021B4C95600831694 /* Debug */,

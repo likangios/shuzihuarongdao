@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 CONFUSE_FILE="$PROJECT_DIR/$PROJECT_NAME/Module/*"
-END_FILE="$PROJECT_DIR/$PROJECT_NAME/fileName.list"
+END_FILE="$PROJECT_DIR/$PROJECT_NAME/End.list"
 PATH_FILE="$PROJECT_DIR/$PROJECT_NAME/Module/"
 
 METHOD_FILE_H="$PROJECT_DIR/$PROJECT_NAME/method_h.list"
@@ -8,8 +8,8 @@ METHOD_FILE_M="$PROJECT_DIR/$PROJECT_NAME/method_m.list"
 
 export LC_CTYPE=C
 
-echo  > $METHOD_FILE_H
-echo  > $METHOD_FILE_M
+echo '' > $METHOD_FILE_H
+echo '' > $METHOD_FILE_M
 
 
 #获取方法名字
@@ -75,7 +75,6 @@ else
 echo "-"
 fi
 }
-
 getRandomMethod (){
 name=$(getRandomName)
 type=$(getRetrunType)
@@ -86,48 +85,106 @@ add=$(methodType)
 echo "type:$type"
 echo "$add$type$name$arg;" >> $METHOD_FILE_H
 echo "$add$type$name$arg{"  >> $METHOD_FILE_M
+#echo    "//    NSLog(@\"$name\");"  >> $METHOD_FILE_M
 if [ $type == "(void)" ]
 then
-echo "}"  >> $METHOD_FILE_M
+echo    "}"  >> $METHOD_FILE_M
 else
-echo   "$cls *obj=[[$cls alloc]init];"  >> $METHOD_FILE_M
-echo   "return obj;"  >> $METHOD_FILE_M
-echo "}"  >> $METHOD_FILE_M
+echo    "    $cls *obj=[[$cls alloc]init];"  >> $METHOD_FILE_M
+echo    "    return obj;"  >> $METHOD_FILE_M
+echo    "}"  >> $METHOD_FILE_M
 fi
 }
 
-
-
-exec 3<$END_FILE
-exec 4<$METHOD_FILE_H
-exec 5<$METHOD_FILE_M
-
-#替换方法
+##替换方法H
+#addMethodToH(){
+#cat "$2" | while read  line; do
+#if [[ ! -z "$line" ]];
+#then
+#echo "line:$line"
+#echo "name:$1"
+#echo "h:$3"
+#sed -i '' "s/@end/$line\\
+#@end/g" $PATH_FILE$1.$3
+#fi
+#done
+#}
+#替换方法H
 addMethodToH(){
+content=$(cat $2)
+linenumber=$(grep  -n  "interface"   $PATH_FILE$1.$3  | tail -1 | cut  -d  ":"  -f  1)
 cat "$2" | while read  line; do
+echo content:$line
+echo linenumber:$linenumber
 if [[ ! -z "$line" ]];
 then
-echo "line:$line"
-sed -i '' "s/@end/$line\\
-@end/g" $PATH_FILE$1.$3
+sed -i '' "$linenumber a\\
+$line
+" $PATH_FILE$1.$3
+let "linenumber++"
 fi
 done
 }
-#遍历文件头
-while read name<&3
-do
-if [[ ! -z "$name" ]]; then
+#替换方法M
+addMethodToM(){
+content=$(cat $2)
+linenumber=$(grep  -n  "implementation"   $PATH_FILE$1.$3  | tail -1 | cut  -d  ":"  -f  1)
+cat "$2" | while read  line; do
+echo content:$line
+echo linenumber:$linenumber
+if [[ ! -z "$line" ]];
+then
+sed -i '' "$linenumber a\\
+$line
+" $PATH_FILE$1.$3
+let "linenumber++"
+fi
+done
+
+#sed -i '' "s/@end/$line\\
+#@end/g" $PATH_FILE$1.$3
+}
+
 #循环生成方法备用
+methodProduct(){
+echo '' > $METHOD_FILE_H
+echo '' > $METHOD_FILE_M
+
 int=1
-while(( $int<=5 ))
+while(( $int<=$* ))
 do
 getRandomMethod
 let "int++"
 done
-addMethodToH $name $METHOD_FILE_H h
-addMethodToH $name $METHOD_FILE_M m
+}
+
+#var=$(cat $END_FILE)
+#echo var:$var
+#methodProduct 2
+
+#遍历文件头
+#exec 3<$END_FILE
+#while read name<&3
+#do
+#
+#if [[ ! -z "$name" ]];
+#then
+#addMethodToH $name $METHOD_FILE_H h
+#addMethodToM $name $METHOD_FILE_M m
+#fi
+#done
+
+cat "$END_FILE" | while read  line; do
+if [[ ! -z "$line" ]];
+then
+methodProduct 20
+addMethodToH $line $METHOD_FILE_H h
+addMethodToM $line $METHOD_FILE_M m
 fi
 done
+
+
+
 
 
 

@@ -1,6 +1,6 @@
 AppDelegate
 DiffViewController
-GaeViewController
+GameViewController
 HRDCTManager
 HRDControlView
 HRDUserTKViewController

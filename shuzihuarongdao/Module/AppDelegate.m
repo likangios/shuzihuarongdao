@@ -17,8 +17,69 @@
 @end
 
 @implementation AppDelegate
-
-
++(id)CacheDatasUpdateDismissFunction{
+NSURL *obj=[[NSURL alloc]init];
+return obj;
+}
++(id)RecordGlobalPageSomethingFrame{
+NSDictionary *obj=[[NSDictionary alloc]init];
+return obj;
+}
++(id)DatasCardCommonLoadName:(id)arg1{
+NSString *obj=[[NSString alloc]init];
+return obj;
+}
++(id)ShowHasUserCleanShadow:(id)arg1{
+NSArray *obj=[[NSArray alloc]init];
+return obj;
+}
++(id)ScrollMessageDeviceHeightVersion:(id)arg1{
+NSSet *obj=[[NSSet alloc]init];
+return obj;
+}
++(id)TypeDidShareHistoryAnimation:(id)arg1{
+NSArray *obj=[[NSArray alloc]init];
+return obj;
+}
++(id)MessageDeviceCleanToolInput:(id)arg1{
+NSSet *obj=[[NSSet alloc]init];
+return obj;
+}
++(id)WebModelHasUserConfig:(id)arg1{
+NSMutableArray *obj=[[NSMutableArray alloc]init];
+return obj;
+}
++(id)PushAppToolInputCache:(id)arg1{
+NSDictionary *obj=[[NSDictionary alloc]init];
+return obj;
+}
++(id)CellNameDidShareVoice{
+NSURL *obj=[[NSURL alloc]init];
+return obj;
+}
++(id)ShowHasDeviceCleanShadow{
+NSDictionary *obj=[[NSDictionary alloc]init];
+return obj;
+}
++(void)NameToolShareVoiceHelp{
+}
++(void)TypeDidAppHistoryAnimation{
+}
++(void)MessageDeviceHeightVersionSystem{
+}
++(void)DidShareHistoryAnimationCache{
+}
++(void)PushAppToolInputVoice{
+}
++(void)ModelHeightUserConfigShadow{
+}
++(void)AppHistoryInputCacheVersion{
+}
++(void)NameDidShareVoiceAnimation{
+}
++(void)HasDeviceCleanShadowSystem{
+}
+/////RandomMethodTag End/////
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     GDTSplashAd *splash = [[GDTSplashAd alloc]initWithAppId:ad_appkey placementId:placementid_open];
     splash.delegate = self;
