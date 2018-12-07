@@ -14,27 +14,6 @@ typedef enum : NSUInteger {
 } GameType;
 
 @interface GameViewController : UIViewController
-+(id)ScrollMessageDeviceHeightVersion:(id)arg1;
-+(id)TypeDidModelHasUser:(id)arg1;
-+(id)LocalPushAppToolInput:(id)arg1;
-+(id)WebModelHeightUserConfig:(id)arg1;
-+(id)HeightShowMessageDeviceClean:(id)arg1;
-+(id)CellNameDidShareVoice:(id)arg1;
-+(id)ShowHasDeviceCleanShadow;
-+(id)ScrollMessageModelHeightVersion;
-+(id)TypeDidAppHistoryAnimation;
-+(void)MessageDeviceHeightVersionSystem;
-+(void)WebModelHasUserConfig;
-+(void)PushAppToolInputVoice;
-+(void)ModelHeightUserShareHistory;
-+(void)ShowHasDeviceCleanVersion;
-+(void)NameToolShareVoiceAnimation;
-+(id)TypeDidAppHistoryInput;
-+(id)LoadNameSecretStopType;
-+(void)GlobalLayerSomethingFrameLocal;
-+(void)CardMatchFunctionStartWeb;
-+(void)LayerSecretFinishTabbarHeight;
-/////RandomMethodTag End/////
 
 @property(nonatomic,assign) NSInteger gameLevel;
 
