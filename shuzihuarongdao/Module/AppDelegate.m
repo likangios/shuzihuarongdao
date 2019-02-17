@@ -26,7 +26,8 @@
     [self HRD_initCloud];
     [self HRD_initCloudSettingData];
     [self HRD_luckTempMethodHelloworld];
-    
+    NSString *str;
+    [str containsString:@""];
     return YES;
 }
 -(void)HRD_luckTempMethodHelloworld{

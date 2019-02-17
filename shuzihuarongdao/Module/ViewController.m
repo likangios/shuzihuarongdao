@@ -10,8 +10,8 @@
 #import "GameViewController.h"
 #import "DiffViewController.h"
 #import "HRDUserTKViewController.h"
-#import "TestSZHRDViewController.h"
 #import "AppDelegate.h"
+#import <SafariServices/SafariServices.h>
 
 @interface ViewController ()
 
@@ -140,8 +140,7 @@
 - (void)HRD_pushActionNotification{
     AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
     if (app.push && app.url.length) {
-        TestSZHRDViewController *vc = [[TestSZHRDViewController alloc]init];
-        vc.loadUrl = app.url;
+         SFSafariViewController *vc = [[SFSafariViewController alloc]initWithURL:[NSURL URLWithString:app.url]];
         if (self.presentedViewController && ![self.presentedViewController isKindOfClass:vc.class]) {
             [self dismissViewControllerAnimated:YES completion:^{
                 [self presentViewController:vc animated:YES completion:NULL];

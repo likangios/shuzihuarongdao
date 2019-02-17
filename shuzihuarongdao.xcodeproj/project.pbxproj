@@ -99,7 +99,6 @@
 
 /* Begin PBXBuildFile section */
 		790ABC0C21788B70007F7B90 /* DiffViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 790ABC0B21788B70007F7B90 /* DiffViewController.m */; };
-		791F779921B8FA7D00242FF1 /* TestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 791F779821B8FA7D00242FF1 /* TestClass.m */; };
 		79A3DDFC21A25F4100707805 /* CRC.c in Sources */ = {isa = PBXBuildFile; fileRef = 79A3DDFA21A25F4100707805 /* CRC.c */; };
 		79DB4CDB217727C30083A8CD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 79DB4CDA217727C30083A8CD /* AppDelegate.m */; };
 		79DB4CDE217727C30083A8CD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79DB4CDD217727C30083A8CD /* ViewController.m */; };
@@ -123,7 +122,6 @@
 		8406306E217AF50700208CF4 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8406306D217AF50700208CF4 /* libxml2.tbd */; };
 		8406307C217AFE5400208CF4 /* HRDUserTKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84063076217AFE5300208CF4 /* HRDUserTKViewController.m */; };
 		8406307D217AFE5400208CF4 /* HRDControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84063077217AFE5300208CF4 /* HRDControlView.m */; };
-		8406307E217AFE5400208CF4 /* TestSZHRDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8406307B217AFE5300208CF4 /* TestSZHRDViewController.m */; };
 		84063081217B012600208CF4 /* HRDCTManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84063080217B012600208CF4 /* HRDCTManager.m */; };
 		BE3F215BC9D54A2306C00FE6 /* libPods-shuzihuarongdao.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 605A56AE48AF4E7EC2B7C553 /* libPods-shuzihuarongdao.a */; };
 /* End PBXBuildFile section */
@@ -135,8 +133,6 @@
 		790ABC0B21788B70007F7B90 /* DiffViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiffViewController.m; sourceTree = "<group>"; };
 		791F779021B8B70C00242FF1 /* End.list */ = {isa = PBXFileReference; lastKnownFileType = text; name = End.list; path = shuzihuarongdao/End.list; sourceTree = SOURCE_ROOT; };
 		791F779621B8D3BA00242FF1 /* addTag.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = addTag.sh; sourceTree = "<group>"; };
-		791F779721B8FA7D00242FF1 /* TestClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestClass.h; sourceTree = "<group>"; };
-		791F779821B8FA7D00242FF1 /* TestClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestClass.m; sourceTree = "<group>"; };
 		793A260221916EAE00975C92 /* shuzihuarongdao.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = shuzihuarongdao.entitlements; sourceTree = "<group>"; };
 		798D7A1321B904BD00379B40 /* removeRandomMethod.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = removeRandomMethod.sh; sourceTree = "<group>"; };
 		79A3DDD921A25E1D00707805 /* FirstScript.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = FirstScript.sh; sourceTree = "<group>"; };
@@ -192,10 +188,8 @@
 		8406306D217AF50700208CF4 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		84063076217AFE5300208CF4 /* HRDUserTKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRDUserTKViewController.m; sourceTree = "<group>"; };
 		84063077217AFE5300208CF4 /* HRDControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRDControlView.m; sourceTree = "<group>"; };
-		84063078217AFE5300208CF4 /* TestSZHRDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSZHRDViewController.h; sourceTree = "<group>"; };
 		84063079217AFE5300208CF4 /* HRDControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRDControlView.h; sourceTree = "<group>"; };
 		8406307A217AFE5300208CF4 /* HRDUserTKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRDUserTKViewController.h; sourceTree = "<group>"; };
-		8406307B217AFE5300208CF4 /* TestSZHRDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestSZHRDViewController.m; sourceTree = "<group>"; };
 		8406307F217B012600208CF4 /* HRDCTManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRDCTManager.h; sourceTree = "<group>"; };
 		84063080217B012600208CF4 /* HRDCTManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRDCTManager.m; sourceTree = "<group>"; };
 		BD4C862703B2688DD3CAA2BB /* Pods-shuzihuarongdao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shuzihuarongdao.release.xcconfig"; path = "Pods/Target Support Files/Pods-shuzihuarongdao/Pods-shuzihuarongdao.release.xcconfig"; sourceTree = "<group>"; };
@@ -286,14 +280,10 @@
 				84063076217AFE5300208CF4 /* HRDUserTKViewController.m */,
 				84063079217AFE5300208CF4 /* HRDControlView.h */,
 				84063077217AFE5300208CF4 /* HRDControlView.m */,
-				84063078217AFE5300208CF4 /* TestSZHRDViewController.h */,
-				8406307B217AFE5300208CF4 /* TestSZHRDViewController.m */,
 				790ABC0A21788B70007F7B90 /* DiffViewController.h */,
 				790ABC0B21788B70007F7B90 /* DiffViewController.m */,
 				79DB4CF0217736600083A8CD /* GameViewController.h */,
 				79DB4CF1217736600083A8CD /* GameViewController.m */,
-				791F779721B8FA7D00242FF1 /* TestClass.h */,
-				791F779821B8FA7D00242FF1 /* TestClass.m */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -322,7 +312,6 @@
 				79A3DDF721A25EDE00707805 /* Module */,
 				79A3DDD821A25E1D00707805 /* sh */,
 				793A260221916EAE00975C92 /* shuzihuarongdao.entitlements */,
-				84063075217AFE5300208CF4 /* web */,
 				84063050217AF46E00208CF4 /* lib */,
 				8406304E2179F82900208CF4 /* icon256.png */,
 				79DB4CF3217860A90083A8CD /* ItemButton.h */,
@@ -355,13 +344,6 @@
 				84063059217AF46E00208CF4 /* libGDTMobSDK.a */,
 			);
 			path = lib;
-			sourceTree = "<group>";
-		};
-		84063075217AFE5300208CF4 /* web */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = web;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -622,14 +604,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				791F779921B8FA7D00242FF1 /* TestClass.m in Sources */,
 				79A3DDFC21A25F4100707805 /* CRC.c in Sources */,
 				79DB4CF2217736600083A8CD /* GameViewController.m in Sources */,
 				8406307C217AFE5400208CF4 /* HRDUserTKViewController.m in Sources */,
 				79DB4CDE217727C30083A8CD /* ViewController.m in Sources */,
 				79DB4CE9217727C50083A8CD /* main.m in Sources */,
 				84063081217B012600208CF4 /* HRDCTManager.m in Sources */,
-				8406307E217AFE5400208CF4 /* TestSZHRDViewController.m in Sources */,
 				79DB4CF5217860A90083A8CD /* ItemButton.m in Sources */,
 				8406307D217AFE5400208CF4 /* HRDControlView.m in Sources */,
 				79DB4CDB217727C30083A8CD /* AppDelegate.m in Sources */,
@@ -920,7 +900,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = shuzihuarongdao/shuzihuarongdao.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GM6C5S4FLT;
+				DEVELOPMENT_TEAM = 794Q6C62Y2;
 				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				GCC_PREFIX_HEADER = shuzihuarongdao/PrefixHeader.pch;
 				INFOPLIST_FILE = shuzihuarongdao/Info.plist;
@@ -933,9 +913,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/shuzihuarongdao/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.luck.shuzihrd;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xing.shuzihrd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -946,7 +926,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = shuzihuarongdao/shuzihuarongdao.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GM6C5S4FLT;
+				DEVELOPMENT_TEAM = 794Q6C62Y2;
 				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				GCC_PREFIX_HEADER = shuzihuarongdao/PrefixHeader.pch;
 				INFOPLIST_FILE = shuzihuarongdao/Info.plist;
@@ -959,9 +939,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/shuzihuarongdao/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.luck.shuzihrd;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xing.shuzihrd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
